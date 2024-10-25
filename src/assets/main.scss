@@ -1,0 +1,27 @@
+@use 'vuetify' with (
+   $body-font-family: "vinciSansRegular",
+);
+
+* {
+  font-family: "vinciSansRegular";
+}
+
+@font-face {
+  font-family: "vinciSansRegular";
+  src: url('@/assets/font/vinci/Vinci Sans Regular.ttf');
+}
+
+
+@font-face {
+  font-family: "vinci";
+  src: url('@/assets/font/vinci/VinciSansExpanded-Medium.ttf');
+}
+
+@font-face {
+  font-family: "vinci bolt";
+  src: url('@/assets/font/vinci/Vinci Sans Bold.ttf');
+}
+
+/* * {
+  font-family: "vinci" !important;
+} */
