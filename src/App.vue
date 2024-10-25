@@ -10,8 +10,9 @@
 
 <style lang="css">
 #game-view {
-  background-image: url('@/assets/background.jpg');
-  background-size: cover;
+  background-image: url('@/assets/halloween-5596921_1920.jpg');
+  background-size: fill;
+  background-repeat: no-repeat;
   background-position: center;
   width: 100vw;
   height: 100vh;
