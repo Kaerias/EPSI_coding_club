@@ -69,15 +69,15 @@ import { Ref, ref } from "vue";
   let password: Ref<string> = ref("");
 
   function signIn() {
+    router.push("/game");
     if (user.value.length > 0 && password.value.length > 0) {
       // this.store.login();
-      router.push("/game");
     }
   }
 
   function register() {
     if (user.value.length > 0 && password.value.length > 0) {
-      login = true;
+      login.value = true;
       // this.store.register();
     }
   }
