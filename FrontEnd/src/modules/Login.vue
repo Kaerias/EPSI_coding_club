@@ -8,15 +8,15 @@
         <v-card-title>
           <span class="headline">Se connecter</span>
         </v-card-title>
-        <v-card-text >
+        <v-card-text>
           <v-text-field
-            v-model="store.username"
+            v-model="user"
             label="Username"
             prepend-icon="mdi-account"
             required
           ></v-text-field>
           <v-text-field
-            v-model="store.room"
+            v-model="password"
             label="Password"
             prepend-icon="mdi-home"
             required
@@ -25,7 +25,7 @@
         <v-card-actions>
           <v-btn color="primary" @click="login = false">S'enregistrer ?</v-btn>
           <v-spacer></v-spacer>
-          <v-btn color="primary" @click="store.joinGame">Connexion</v-btn>
+          <v-btn color="primary" @click="signIn()">Connexion</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -34,15 +34,15 @@
         <v-card-title>
           <span class="headline">S'enregistrer</span>
         </v-card-title>
-        <v-card-text >
+        <v-card-text>
           <v-text-field
-            v-model="store.username"
+            v-model="user"
             label="Username"
             prepend-icon="mdi-account"
             required
           ></v-text-field>
           <v-text-field
-            v-model="store.room"
+            v-model="password"
             label="Password"
             prepend-icon="mdi-home"
             required
@@ -51,38 +51,36 @@
         <v-card-actions>
           <v-btn color="primary" @click="login = true">Se connecter ? </v-btn>
           <v-spacer></v-spacer>
-          <v-btn color="green" @click="login = false">Valider l'inscription</v-btn>
+          <v-btn color="green" @click="register()">Valider l'inscription</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
   </v-container>
 </template>
 
-<script lang="ts">
-import { Vue } from "vue-class-component";
+<script lang="ts" setup>
 import router from "@/router";
 import { useGameStore } from "./store";
+import { Ref, ref } from "vue";
 
-export default class Login extends Vue {
-  private store = useGameStore();
-  login: boolean = true;
-  user: string = "";
-  password: string = "";
+  const store = useGameStore();
+  let login: Ref<boolean> = ref(true);
+  let user: Ref<string> = ref("");
+  let password: Ref<string> = ref("");
 
-  signIn() {
-    if (this.user.length > 0 && this.password.length > 0) {
+  function signIn() {
+    if (user.value.length > 0 && password.value.length > 0) {
       // this.store.login();
+      router.push("/game");
     }
   }
 
-
-  register() {
-    if (this.user.length > 0 && this.password.length > 0) {
+  function register() {
+    if (user.value.length > 0 && password.value.length > 0) {
+      login = true;
       // this.store.register();
     }
   }
-
-}
 </script>
 
 <style lang="css" scoped>

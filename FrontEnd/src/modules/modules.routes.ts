@@ -1,10 +1,15 @@
 import Game from "@/modules/Game.vue";
+import Login from "@/modules/Login.vue";
 
 
 const module = [
   {
-  path: "/",
-  component: Game,
+    path: "/",
+    component: Login,
+  },
+  {
+    path: "/game",
+    component: Game,
   },
 ];
 
