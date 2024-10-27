@@ -5,7 +5,11 @@
         <v-flex xs12>
           <!-- Title Card -->
           <v-container width="100vw">
-            <v-card width="60vw"  height="10vh" class=" titleImage transparent-card elevation-0">
+            <v-card
+              width="60vw"
+              height="10vh"
+              class="titleImage transparent-card elevation-0"
+            >
               <v-card-title class="headline text-center mt-5"
                 >Réalise ta potion</v-card-title
               >
@@ -27,7 +31,7 @@
                   style="
                     border-top-left-radius: 15px !important;
                     border-top-right-radius: 15px !important;
-                    background-color: rgb(255, 255, 255, 0.4);
+                    background-color: rgb(255, 255, 255, 0.6);
                   "
                 >
                   <v-card-title>Ingrédients</v-card-title>
@@ -36,7 +40,36 @@
                     width="15vw"
                     height="100vh"
                   >
-                    <v-card-text class="">Content for card 1</v-card-text>
+                    <v-row class="pt-2 pl-2 pr-3">
+                      <v-col cols="6" v-for="nbrImages in 5">
+                        <v-img
+                          src="@/assets/cauldron 2.png"
+                          alt="Logo"
+                          class="ingredientBackground"
+                        ></v-img>
+                        <h3 class="text-center ingredientBackground">
+                          bave de crapaud
+                        </h3>
+                        <v-row>
+                          <v-col
+                            cols="6"
+                            class="text-center d-flex align-center justify-center"
+                          >
+                            <v-btn size="small" class="btnIngredientBackground"
+                              ><h2 class="pt-1">+1</h2></v-btn
+                            >
+                          </v-col>
+                          <v-col
+                            cols="6"
+                            class="text-center d-flex align-center justify-center"
+                          >
+                            <v-btn size="small" class="btnIngredientBackground"
+                              ><h2 class="pt-1">+5</h2></v-btn
+                            >
+                          </v-col>
+                        </v-row>
+                      </v-col>
+                    </v-row>
                   </v-card>
                 </v-card>
               </v-flex>
@@ -51,7 +84,7 @@
                 </v-card>
               </v-flex>
               <v-spacer></v-spacer>
-              <v-flex xs4 class="pr-4 d-flex align-center justify-center">
+              <v-flex xs4 class="mr-4 d-flex align-center justify-center">
                 <v-card
                   class="mx-auto transparent-card elevation-0"
                   width="15vw"
@@ -66,9 +99,28 @@
                       class="d-flex align-center justify-center text-center"
                       >Recette</v-card-title
                     >
-                    <v-card-text class="d-flex align-center justify-center mt-4"
-                      >Content for card 1</v-card-text
-                    >
+                    <div class="pt-4 text-center">
+                      <v-card-text
+                        class="d-flex align-center justify-center mt-4"
+                      >
+                        1- T'es grands morts sur le port</v-card-text
+                      ><v-card-text
+                        class="d-flex align-center justify-center mt-4"
+                      >
+                        2- Mon secret ton ***
+                      </v-card-text>
+                      <v-card-text
+                        class="d-flex align-center justify-center mt-4"
+                      >
+                        3- En fait, je suis un sorcier
+                      </v-card-text>
+                      <v-card-text
+                        class="d-flex align-center justify-center mt-4"
+                      >
+                        4- J'ai jamais su coder, je suis une fraude, cimer
+                        Copilot
+                      </v-card-text>
+                    </div>
                   </v-card>
                 </v-card>
               </v-flex>
@@ -84,6 +136,8 @@
 import router from "@/router";
 import { useGameStore } from "./store";
 import { Ref, ref } from "vue";
+
+let nbrImages: Ref<number> = ref(0);
 
 const store = useGameStore();
 </script>
@@ -140,6 +194,14 @@ const store = useGameStore();
   background-position: right;
   opacity: 0.8; /* Adjust the opacity as needed */
   z-index: -1;
+}
+
+.ingredientBackground {
+  background-color: rgba(255, 235, 205, 0.5);
+}
+
+.btnIngredientBackground {
+  background-color: rgba(255, 235, 205, 0.8);
 }
 
 .parchment {
