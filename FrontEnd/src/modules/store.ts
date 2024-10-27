@@ -1,19 +1,26 @@
 import { createPinia, defineStore } from 'pinia';
 import * as client from "./service";
-import { Iingredient, Isignin, Isignup } from './type';
+import { Iingredient, Isignin, Isignup, IingredientRecepie, IGame } from './type';
 
 // Create a new Pinia instance
 const pinia = createPinia();
 
+const state: IGame = {
+    ingredient: {
+        batwing: 0,
+        pumpkin: 0,
+        snake: 0,
+        spider: 0,
+        toad: 0,
+    }
+};
+
+
+
 // Example store definition
 export const useGameStore = defineStore('game', {
-    state: () => ({
-        count: 1
-    }),
+    state: () => state,
     getters: {
-        doubleCount(): number {
-            return this.count * 2;
-        }
     },
     actions: {
         signup(param: Isignin) {
