@@ -319,14 +319,29 @@
                     >
                     <div class="text-start">
                       <v-card-text
-                        class="d-flex align-center justify-center ml-2"
+                        class="d-flex align-center justify-center ml-5 mt-5"
                       >
-                      1 - Placez 3 pattes d'araignée dans le chaudron.<br/>
-                      2 - Ajoutez 1 aile de chauve-souris et faites grésiller.<br/>
-                      3 - Incorporez 4 citrouilles en morceaux.<br/>
-                      4 - Versez 12 doses de venin de serpent et mélangez.<br/>
-                      5 - Ajoutez 26 gouttes de bave de crapaud pour épaissir.<br/>
-                      6 - Chuchotez l’incantation et attendez les vapeurs violettes.<br/>
+                      <v-row>
+                        <v-col cols="12" class="">
+                          1 - Placez 3 pattes d'araignée dans le chaudron.
+
+                        </v-col>
+                        <v-col  cols="12">
+                          2 - Ajoutez 1 aile de chauve-souris et faites grésiller.
+                        </v-col>
+                        <v-col  cols="12">
+                          3 - Incorporez 4 citrouilles en morceaux.
+                        </v-col>
+                        <v-col  cols="12">
+                          4 - Versez 12 doses de venin de serpent et mélangez.
+                        </v-col>
+                        <v-col  cols="12">
+                          5 - Ajoutez 26 gouttes de bave de crapaud pour épaissir.
+                        </v-col>
+                        <v-col  cols="12">
+                          6 - Chuchotez l’incantation et ajoutez une pincée de <strong>l’ingrédient secret</strong>, pour libérer les pouvoirs.
+                        </v-col>
+                    </v-row>
                       </v-card-text>
                     </div>
                   </v-card>
