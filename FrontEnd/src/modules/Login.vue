@@ -16,14 +16,21 @@
             required
           ></v-text-field>
           <v-text-field
-            v-model="password"
-            label="Password"
+            :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
             prepend-icon="mdi-home"
-            required
+            :type="show2 ? 'text' : 'password'"
+            class="input-group--focused"
+            hint="At least 8 characters"
+            label="Visible"
+            name="input-10-2"
+            @click:append="show2 = !show2"
+            v-model="password"
           ></v-text-field>
         </v-card-text>
         <v-card-actions>
-          <v-btn color="primary" @click="login = false">S'enregistrer ?</v-btn>
+          <v-btn color="primary" @click="changeToRegister()"
+            >S'enregistrer ?</v-btn
+          >
           <v-spacer></v-spacer>
           <v-btn color="primary" @click="signIn()">Connexion</v-btn>
         </v-card-actions>
@@ -42,14 +49,21 @@
             required
           ></v-text-field>
           <v-text-field
-            v-model="password"
-            label="Password"
+            :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
             prepend-icon="mdi-home"
-            required
+            :type="show2 ? 'text' : 'password'"
+            class="input-group--focused"
+            hint="At least 8 characters"
+            label="Visible"
+            name="input-10-2"
+            @click:append="show2 = !show2"
+            v-model="password"
           ></v-text-field>
         </v-card-text>
         <v-card-actions>
-          <v-btn color="primary" @click="login = true">Se connecter ? </v-btn>
+          <v-btn color="primary" @click="changeToLogin()"
+            >Se connecter ?
+          </v-btn>
           <v-spacer></v-spacer>
           <v-btn color="green" @click="register()">Valider l'inscription</v-btn>
         </v-card-actions>
@@ -62,25 +76,50 @@
 import router from "@/router";
 import { useGameStore } from "./store";
 import { Ref, ref } from "vue";
+import { IsignIn, IsignUp, IingredientRecepie, IGame } from "./type";
 
-  const store = useGameStore();
-  let login: Ref<boolean> = ref(true);
-  let user: Ref<string> = ref("");
-  let password: Ref<string> = ref("");
+const store = useGameStore();
+let login: Ref<boolean> = ref(true);
+let user: Ref<string> = ref("");
+let password: Ref<string> = ref("");
+let show2: Ref<boolean> = ref(false);
 
-  function signIn() {
-    router.push("/game");
-    if (user.value.length > 0 && password.value.length > 0) {
-      // this.store.login();
-    }
+function signIn() {
+  if (user.value.length > 0 && password.value.length > 0) {
+    const userLogin: IsignIn = {
+      username: user.value,
+      password: password.value,
+    };
+    store.signin(userLogin);
+    user.value = "";
+    password.value = "";
   }
+}
 
-  function register() {
-    if (user.value.length > 0 && password.value.length > 0) {
-      login.value = true;
-      // this.store.register();
-    }
+function register() {
+  if (user.value.length > 0 && password.value.length > 0) {
+    const userRegister: IsignUp = {
+      username: user.value,
+      password: password.value,
+      ù,
+    };
+    store.signup(userRegister);
+    login.value = true;
+    user.value = "";
+    password.value = "";
   }
+}
+
+function changeToLogin() {
+  console.log("changeToLogin");
+
+  login.value = true;
+}
+
+function changeToRegister() {
+  console.log("changeToRegister");
+  login.value = false;
+}
 </script>
 
 <style lang="css" scoped>
