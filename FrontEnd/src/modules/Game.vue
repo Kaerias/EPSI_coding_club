@@ -48,14 +48,17 @@
                           class="ingredientBackground"
                         ></v-img>
                         <h3 class="text-center ingredientBackground">
-                          bave de crapaud
+                          oeil araignée
                         </h3>
                         <v-row>
                           <v-col
                             cols="6"
                             class="text-center d-flex align-center justify-center"
                           >
-                            <v-btn size="small" class="btnIngredientBackground"
+                            <v-btn
+                              size="small"
+                              class="btnIngredientBackground"
+                              @click="addSpiderOne"
                               ><h2 class="pt-1">+1</h2></v-btn
                             >
                           </v-col>
@@ -63,7 +66,10 @@
                             cols="6"
                             class="text-center d-flex align-center justify-center"
                           >
-                            <v-btn size="small" class="btnIngredientBackground"
+                            <v-btn
+                              size="small"
+                              class="btnIngredientBackground"
+                              @click="addSpiderFive"
                               ><h2 class="pt-1">+5</h2></v-btn
                             >
                           </v-col>
@@ -76,14 +82,17 @@
                           class="ingredientBackground"
                         ></v-img>
                         <h3 class="text-center ingredientBackground">
-                          bave de crapaud
+                          chauve-souris
                         </h3>
                         <v-row>
                           <v-col
                             cols="6"
                             class="text-center d-flex align-center justify-center"
                           >
-                            <v-btn size="small" class="btnIngredientBackground"
+                            <v-btn
+                              size="small"
+                              class="btnIngredientBackground"
+                              @click="addBatOne"
                               ><h2 class="pt-1">+1</h2></v-btn
                             >
                           </v-col>
@@ -91,7 +100,10 @@
                             cols="6"
                             class="text-center d-flex align-center justify-center"
                           >
-                            <v-btn size="small" class="btnIngredientBackground"
+                            <v-btn
+                              size="small"
+                              class="btnIngredientBackground"
+                              @click="addBatFive"
                               ><h2 class="pt-1">+5</h2></v-btn
                             >
                           </v-col>
@@ -104,14 +116,17 @@
                           class="ingredientBackground"
                         ></v-img>
                         <h3 class="text-center ingredientBackground">
-                          bave de crapaud
+                          Citrouille
                         </h3>
                         <v-row>
                           <v-col
                             cols="6"
                             class="text-center d-flex align-center justify-center"
                           >
-                            <v-btn size="small" class="btnIngredientBackground"
+                            <v-btn
+                              size="small"
+                              class="btnIngredientBackground"
+                              @click="addPumpkinOne"
                               ><h2 class="pt-1">+1</h2></v-btn
                             >
                           </v-col>
@@ -119,7 +134,42 @@
                             cols="6"
                             class="text-center d-flex align-center justify-center"
                           >
-                            <v-btn size="small" class="btnIngredientBackground"
+                            <v-btn
+                              size="small"
+                              class="btnIngredientBackground"
+                              @click="addPumpkinFive"
+                              ><h2 class="pt-1">+5</h2></v-btn
+                            >
+                          </v-col>
+                        </v-row>
+                      </v-col>
+                      <v-col cols="6">
+                        <v-img
+                          src="@/assets/cauldron 2.png"
+                          alt="Logo"
+                          class="ingredientBackground"
+                        ></v-img>
+                        <h3 class="text-center ingredientBackground">Venim</h3>
+                        <v-row>
+                          <v-col
+                            cols="6"
+                            class="text-center d-flex align-center justify-center"
+                          >
+                            <v-btn
+                              size="small"
+                              class="btnIngredientBackground"
+                              @click="addSnakeOne"
+                              ><h2 class="pt-1">+1</h2></v-btn
+                            >
+                          </v-col>
+                          <v-col
+                            cols="6"
+                            class="text-center d-flex align-center justify-center"
+                          >
+                            <v-btn
+                              size="small"
+                              class="btnIngredientBackground"
+                              @click="addSnakeFive"
                               ><h2 class="pt-1">+5</h2></v-btn
                             >
                           </v-col>
@@ -132,14 +182,17 @@
                           class="ingredientBackground"
                         ></v-img>
                         <h3 class="text-center ingredientBackground">
-                          bave de crapaud
+                          Crapaud
                         </h3>
                         <v-row>
                           <v-col
                             cols="6"
                             class="text-center d-flex align-center justify-center"
                           >
-                            <v-btn size="small" class="btnIngredientBackground"
+                            <v-btn
+                              size="small"
+                              class="btnIngredientBackground"
+                              @click="addToadOne"
                               ><h2 class="pt-1">+1</h2></v-btn
                             >
                           </v-col>
@@ -147,35 +200,10 @@
                             cols="6"
                             class="text-center d-flex align-center justify-center"
                           >
-                            <v-btn size="small" class="btnIngredientBackground"
-                              ><h2 class="pt-1">+5</h2></v-btn
-                            >
-                          </v-col>
-                        </v-row>
-                      </v-col>
-                      <v-col cols="6">
-                        <v-img
-                          src="@/assets/cauldron 2.png"
-                          alt="Logo"
-                          class="ingredientBackground"
-                        ></v-img>
-                        <h3 class="text-center ingredientBackground">
-                          bave de crapaud
-                        </h3>
-                        <v-row>
-                          <v-col
-                            cols="6"
-                            class="text-center d-flex align-center justify-center"
-                          >
-                            <v-btn size="small" class="btnIngredientBackground"
-                              ><h2 class="pt-1">+1</h2></v-btn
-                            >
-                          </v-col>
-                          <v-col
-                            cols="6"
-                            class="text-center d-flex align-center justify-center"
-                          >
-                            <v-btn size="small" class="btnIngredientBackground"
+                            <v-btn
+                              size="small"
+                              class="btnIngredientBackground"
+                              @click="addToadFive"
                               ><h2 class="pt-1">+5</h2></v-btn
                             >
                           </v-col>
@@ -256,9 +284,72 @@ const store = useGameStore();
 
 function addBatOn() {
   let ingredient: Iingredient = {
-    username: "guillaume",
+    username: "Guillaume",
   };
   store.batOne(ingredient);
+}
+
+function addBatFive() {
+  let ingredient: Iingredient = {
+    username: "Guillaume",
+  };
+  store.batFive(ingredient);
+}
+
+function addPumpkinOne() {
+  let ingredient: Iingredient = {
+    username: "Guillaume",
+  };
+  store.pumpkinOne(ingredient);
+}
+
+function addPumpkinFive() {
+  let ingredient: Iingredient = {
+    username: "Guillaume",
+  };
+  store.pumpkinFive(ingredient);
+}
+
+function addSnakeOne() {
+  let ingredient: Iingredient = {
+    username: "Guillaume",
+  };
+  store.snakeOne(ingredient);
+}
+
+function addSnakeFive() {
+  let ingredient: Iingredient = {
+    username: "Guillaume",
+  };
+  store.snakeOne(ingredient);
+}
+
+function addSpiderOne() {
+  let ingredient: Iingredient = {
+    username: "Guillaume",
+  };
+  store.spiderOne(ingredient);
+}
+
+function addSpiderFive() {
+  let ingredient: Iingredient = {
+    username: "Guillaume",
+  };
+  store.spiderFive(ingredient);
+}
+
+function addToadOne() {
+  let ingredient: Iingredient = {
+    username: "Guillaume",
+  };
+  store.toadOne(ingredient);
+}
+
+function addToadFive() {
+  let ingredient: Iingredient = {
+    username: "Guillaume",
+  };
+  store.toadFive(ingredient);
 }
 </script>
 

@@ -6,7 +6,9 @@ const serviceAccount = require("./serviceAccount.json");
 const credentials = require("./credentials.json");
 const firebase = require("firebase");
 const secret = require("./config.json");
+const cors = require('cors')
 
+app.use(cors())
 app.use(express.json());
 
 require("firebase/firestore");
