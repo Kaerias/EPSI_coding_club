@@ -27,7 +27,7 @@
             height="100vh"
           >
             <v-layout row wrap>
-              <v-flex xs4>
+              <v-flex xs4 class="pr-16 mr-10">
                 <v-card
                   style="
                     border-top-left-radius: 15px !important;
@@ -150,7 +150,7 @@
                           alt="Logo"
                           class="ingredientBackground"
                         ></v-img>
-                        <h3 class="text-center ingredientBackground">Venin  </h3>
+                        <h3 class="text-center ingredientBackground">Venin</h3>
                         <v-row>
                           <v-col
                             cols="6"
@@ -214,82 +214,119 @@
                   </v-card>
                 </v-card>
               </v-flex>
-              <v-spacer></v-spacer>
-              <v-flex xs4 class="d-flex flex-column align-end">
+              <VSpacer/>
+              <v-flex xs4 class="d-flex flex-column align-start justify-start">
                 <v-card
                   class="mx-auto d-flex align-start elevation-0 transparent-card"
                   width="30vw"
                   height="50vh"
                 >
                   <v-row cols="12">
-                    <v-col cols="12"  class="text-center" style="background-color: white;">
+                    <v-col
+                      cols="12"
+                      class="text-center"
+                      style="background-color: white"
+                    >
                       <h3>Les ingrédients dans votre chaudron:</h3>
                     </v-col>
-                    <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
-                      <p>Patte d'araignée<br>{{ store.ingredients.spiderLeg.toString() }}</p>
+                    <v-col
+                      class="d-flex align-center text-center justify-center"
+                      style="background-color: blanchedalmond"
+                    >
+                      <p>
+                        Patte d'araignée<br />{{
+                          store.ingredients.spiderLeg.toString()
+                        }}
+                      </p>
                     </v-col>
-                    <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
-                      <p>aile de chauve souris<br>{{ store.ingredients.batWing.toString() }}</p>
+                    <v-col
+                      class="d-flex align-center text-center justify-center"
+                      style="background-color: blanchedalmond"
+                    >
+                      <p>
+                        aile de chauve souris<br />{{
+                          store.ingredients.batWing.toString()
+                        }}
+                      </p>
                     </v-col>
-                    <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
-                      <p>Citrouille<br>{{ store.ingredients.pumpkinJuice.toString() }}</p>
+                    <v-col
+                      class="d-flex align-center text-center justify-center"
+                      style="background-color: blanchedalmond"
+                    >
+                      <p>
+                        Citrouille<br />{{
+                          store.ingredients.pumpkinJuice.toString()
+                        }}
+                      </p>
                     </v-col>
-                    <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
-                      <p>Venin   de serpent<br>{{ store.ingredients.snakeVenom.toString() }}</p>
+                    <v-col
+                      class="d-flex align-center text-center justify-center"
+                      style="background-color: blanchedalmond"
+                    >
+                      <p>
+                        Venin de serpent<br />{{
+                          store.ingredients.snakeVenom.toString()
+                        }}
+                      </p>
                     </v-col>
-                    <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
-                      <p>Bave de crapaud<br>{{ store.ingredients.toadSlime.toString() }}</p>
+                    <v-col
+                      class="d-flex align-center text-center justify-center"
+                      style="background-color: blanchedalmond"
+                    >
+                      <p>
+                        Bave de crapaud<br />{{
+                          store.ingredients.toadSlime.toString()
+                        }}
+                      </p>
                     </v-col>
-                    <v-col class="d-flex align-center text-center justify-end"  style="background-color: blanchedalmond">
-                        <v-btn style="background-color:brown;" class="text-white" text="Réinitialiser" variant="text" @click="reset()"></v-btn>
+                    <v-col
+                      class="d-flex align-center text-center justify-end"
+                      style="background-color: blanchedalmond"
+                    >
+                      <v-btn
+                        style="background-color: brown"
+                        class="text-white"
+                        text="Réinitialiser"
+                        variant="text"
+                        @click="reset()"
+                      ></v-btn>
                     </v-col>
                   </v-row>
-    
                 </v-card>
                 <v-card
-                  class="mx-auto d-flex align-end elevation-0 transparent-card "
+                  class="mx-auto d-flex align-end elevation-0 transparent-card"
                   width="30vw"
                   height="50vh"
                 >
                   <v-img src="@/assets/cauldron 2.png" alt="Logo" m />
                 </v-card>
               </v-flex>
-              <v-spacer></v-spacer>
-              <v-flex xs4 class="mr-4 d-flex align-center justify-center">
+              <VSpacer/>
+              <v-flex xs4 class="mr-4 d-flex align-center justify-start">
                 <v-card
                   class="mx-auto transparent-card elevation-0"
-                  width="15vw"
+                  width="20vw"
                   height="60vh"
                 >
                   <v-card
                     class="mx-auto parchment transparent-card elevation-0"
-                    width="15vw"
+                    width="20vw"
                     height="100vh"
                   >
                     <v-card-title
                       class="d-flex align-center justify-center text-center"
                       >Recette</v-card-title
                     >
-                    <div class="pt-4 text-center">
+                    <div class="text-start">
                       <v-card-text
-                        class="d-flex align-center justify-center mt-4"
+                        class="d-flex align-center justify-center ml-2"
                       >
-                        1- T'es grands morts sur le port</v-card-text
-                      ><v-card-text
-                        class="d-flex align-center justify-center mt-4"
-                      >
-                        2- Mon secret ton ***
-                      </v-card-text>
-                      <v-card-text
-                        class="d-flex align-center justify-center mt-4"
-                      >
-                        3- En fait, je suis un sorcier
-                      </v-card-text>
-                      <v-card-text
-                        class="d-flex align-center justify-center mt-4"
-                      >
-                        4- J'ai jamais su coder, je suis une fraude, cimer
-                        Copilot
+                      1 - Placez 3 pattes d'araignée dans le chaudron.<br/>
+                      2 - Ajoutez 1 aile de chauve-souris et faites grésiller.<br/>
+                      3 - Incorporez 4 citrouilles en morceaux.<br/>
+                      4 - Versez 12 doses de venin de serpent et mélangez.<br/>
+                      5 - Ajoutez 26 gouttes de bave de crapaud pour épaissir.<br/>
+                      6 - Chuchotez l’incantation et attendez les vapeurs violettes.<br/>
                       </v-card-text>
                     </div>
                   </v-card>
@@ -391,12 +428,9 @@ function addToadFive() {
   store.toadFive(ingredient);
 }
 
-function reset()
-{
+function reset() {
   store.reset();
 }
-
-
 </script>
 
 <style lang="css" scoped>
