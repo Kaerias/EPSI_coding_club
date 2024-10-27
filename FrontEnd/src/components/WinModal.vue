@@ -8,7 +8,7 @@
       <v-card-actions>
         <v-spacer></v-spacer>
 
-        <v-btn text="Close" variant="text" @click="reset()"></v-btn>
+        <v-btn text="Réinitialiser" variant="text" @click="reset()"></v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
