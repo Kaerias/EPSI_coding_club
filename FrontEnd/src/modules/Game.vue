@@ -221,7 +221,7 @@
                   width="30vw"
                   height="50vh"
                 >
-                  <v-row>
+                  <v-row cols="12">
                     <v-col cols="12" style="background-color: white;">
                       <h3>Vos ingrédients:</h3>
                     </v-col>
@@ -240,7 +240,11 @@
                     <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
                       <p>Bave de crapaud<br>{{ store.ingredients.toadSlime.toString() }}</p>
                     </v-col>
+                    <v-col class="d-flex align-center text-center justify-end"  style="background-color: blanchedalmond">
+                        <v-btn style="background-color:brown;" class="text-white" text="Réinitialiser" variant="text" @click="reset()"></v-btn>
+                    </v-col>
                   </v-row>
+    
                 </v-card>
                 <v-card
                   class="mx-auto d-flex align-end elevation-0 transparent-card "
@@ -386,6 +390,13 @@ function addToadFive() {
   };
   store.toadFive(ingredient);
 }
+
+function reset()
+{
+  store.reset();
+}
+
+
 </script>
 
 <style lang="css" scoped>
