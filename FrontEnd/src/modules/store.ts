@@ -14,7 +14,7 @@ const state: IGame = {
         toadSlime: 0
     },
     username: "",
-    isPotionFinished: true,
+    isPotionFinished: false,
     secretIngredient: "",
     isAuth: false
 };
