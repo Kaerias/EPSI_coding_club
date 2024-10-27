@@ -49,7 +49,7 @@
                           class="ingredientBackground"
                         ></v-img>
                         <h3 class="text-center ingredientBackground">
-                          jambe araignée
+                          Patte araignée
                         </h3>
                         <v-row>
                           <v-col
@@ -222,11 +222,11 @@
                   height="50vh"
                 >
                   <v-row cols="12">
-                    <v-col cols="12" style="background-color: white;">
-                      <h3>Vos ingrédients:</h3>
+                    <v-col cols="12"  class="text-center" style="background-color: white;">
+                      <h3>Les ingrédients dans votre chaudron:</h3>
                     </v-col>
                     <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
-                      <p>jambe d'araignée<br>{{ store.ingredients.spiderLeg.toString() }}</p>
+                      <p>Patte d'araignée<br>{{ store.ingredients.spiderLeg.toString() }}</p>
                     </v-col>
                     <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
                       <p>aile de chauve souris<br>{{ store.ingredients.batWing.toString() }}</p>
