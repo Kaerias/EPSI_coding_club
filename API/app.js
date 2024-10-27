@@ -70,10 +70,11 @@ app.post('/signin', (req, res) => {
       }
       if (req.body.password === doc.data().password)
         res.status(200).json({
-          batWing: doc.data(),
+          ingredients: doc.data(),
           isPotionFinished: false,
           pumpkinJuice: 0,
           secretIngredient: "",
+          batWing: 0,
           snakeVenom: 0,
           spiderLeg: 0,
           toadSlime: 0

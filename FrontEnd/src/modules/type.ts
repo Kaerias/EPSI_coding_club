@@ -17,13 +17,16 @@ export interface Iingredient
 
 export interface IingredientRecepie
 {
-    batwing: number;
-    pumpkin: number;
-    snake: number;
-    spider: number;
-    toad: number;
+    batWing: number;
+    pumpkinJuice: number;
+    snakeVenom: number;
+    spiderLeg: number;
+    toadSlime: number;
 }
 
 export interface IGame {
-    ingredient: IingredientRecepie;
+    ingredients: IingredientRecepie;
+    username: string;
+    isPotionFinished: false,
+    secretIngredient: "",
 }

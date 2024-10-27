@@ -6,13 +6,16 @@ import { Iingredient, Isignin, Isignup, IingredientRecepie, IGame } from './type
 const pinia = createPinia();
 
 const state: IGame = {
-    ingredient: {
-        batwing: 0,
-        pumpkin: 0,
-        snake: 0,
-        spider: 0,
-        toad: 0,
-    }
+    ingredients: {
+        batWing: 0,
+        pumpkinJuice: 0,
+        snakeVenom: 0,
+        spiderLeg: 0,
+        toadSlime: 0
+    },
+    username: "",
+    isPotionFinished: false,
+    secretIngredient: "",
 };
 
 
@@ -24,56 +27,110 @@ export const useGameStore = defineStore('game', {
     },
     actions: {
         signup(param: Isignin) {
-            const jsonSignUn = JSON.stringify(param);
-            const returnData = client.signup(jsonSignUn);
+            const jsonSignUp = JSON.stringify(param);
+            client.signup(jsonSignUp).then((resp) => {
+                console.log(resp);
+            });
         },
         signin(param: Isignup) {
             const jsonSignIn = JSON.stringify(param);
-            const returnData = client.signin(jsonSignIn);
+            client.signin(jsonSignIn).then((resp) => {
+                console.log(resp);
+                state.ingredients = {
+                    batWing: resp.data.batWing,
+                    pumpkinJuice: resp.data.pumpkinJuice,
+                    snakeVenom: resp.data.snakeVenom,
+                    spiderLeg: resp.data.spiderLeg,
+                    toadSlime: resp.data.toadSlime
+                }
+                state.secretIngredient = resp.data.secretIngredient;
+                state.isPotionFinished = resp.data.isPotionFinished;
+            });
         },
         batOne(param: Iingredient) {
             const jsonBatOne = JSON.stringify(param);
-            const returnData = client.batOne(jsonBatOne);
+            client.batOne(jsonBatOne).then((resp) => {
+                console.log(resp);
+                state.ingredients.batWing = resp.data.batWing;
+            });
         },
         batFive(param: Iingredient) {
             const jsonBatFive = JSON.stringify(param);
-            const returnData = client.batFive(jsonBatFive);
+            client.batFive(jsonBatFive).then((resp) => {
+                console.log(resp);
+                state.ingredients.batWing = resp.data.batWing;
+            });
         },
         pumpkinOne(param: Iingredient) {
             const jsonPumpkinOne = JSON.stringify(param);
-            const returnData = client.pumpkinOne(jsonPumpkinOne);
+            client.pumpkinOne(jsonPumpkinOne).then((resp) => {
+                console.log(resp);
+                state.ingredients.pumpkinJuice = resp.data.pumpkinJuice;
+            });
         },
         pumpkinFive(param: Iingredient) {
             const jsonPumpkinFive = JSON.stringify(param);
-            const returnData = client.pumpkinFive(jsonPumpkinFive);
+            client.pumpkinFive(jsonPumpkinFive).then((resp) => {
+                console.log(resp);
+                state.ingredients.pumpkinJuice = resp.data.pumpkinJuice;
+            });
         },
         snakeOne(param: Iingredient) {
             const jsonSnakeOne = JSON.stringify(param);
-            const returnData = client.snakeOne(jsonSnakeOne);
+            client.snakeOne(jsonSnakeOne).then((resp) => {
+                console.log(resp);
+                state.ingredients.snakeVenom = resp.data.snakeVenom;
+            });
         },
         snakeFive(param: Iingredient) {
             const jsonSnakeFive = JSON.stringify(param);
-            const returnData = client.snakeFive(jsonSnakeFive);
+            client.snakeFive(jsonSnakeFive).then((resp) => {
+                console.log(resp);
+                state.ingredients.snakeVenom = resp.data.snakeVenom;
+            });
         },
         spiderOne(param: Iingredient) {
             const jsonSpiderOne = JSON.stringify(param);
-            const returnData = client.spiderOne(jsonSpiderOne);
+            client.spiderOne(jsonSpiderOne).then((resp) => {
+                console.log(resp);
+                state.ingredients.spiderLeg = resp.data.spiderLeg;
+            });
         },
         spiderFive(param: Iingredient) {
             const jsonSpiderFive = JSON.stringify(param);
-            const returnData = client.spiderFive(jsonSpiderFive);
+            client.spiderFive(jsonSpiderFive).then((resp) => {
+                console.log(resp);
+                state.ingredients.spiderLeg = resp.data.spiderLeg;
+            });
         },
         toadOne(param: Iingredient) {
             const jsonToadOne = JSON.stringify(param);
-            const returnData = client.toadOne(jsonToadOne);
+            client.toadOne(jsonToadOne).then((resp) => {
+                console.log(resp);
+                state.ingredients.toadSlime = resp.data.toadSlime;
+            });
         },
         toadFive(param: Iingredient) {
             const jsonToadFive = JSON.stringify(param);
-            const returnData = client.toadFive(jsonToadFive);
+            client.toadFive(jsonToadFive).then((resp) => {
+                console.log(resp);
+                state.ingredients.toadSlime = resp.data.toadSlime;
+            });
         },
         reset(param: Iingredient) {
             const jsonReset = JSON.stringify(param);
-            const returnData = client.reset(jsonReset);
+            client.reset(jsonReset).then((resp) => {
+                console.log(resp);
+                state.ingredients = {
+                    batWing: resp.data.batWing,
+                    pumpkinJuice: resp.data.pumpkinJuice,
+                    snakeVenom: resp.data.snakeVenom,
+                    spiderLeg: resp.data.spiderLeg,
+                    toadSlime: resp.data.toadSlime
+                }
+                state.secretIngredient = resp.data.secretIngredient;
+                state.isPotionFinished = resp.data.isPotionFinished;
+            });
         }
     }
 });
