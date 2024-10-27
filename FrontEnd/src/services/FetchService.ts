@@ -48,6 +48,19 @@ class FetchV2Service {
     });
   }
 
+  public patch(url: string, data: any) {
+    return new Promise((resolve, reject) => {
+      axios
+        .patch(hostUrl + url, data, this.requestConfig)
+        .then((resp) => {
+          resolve(resp.data);
+        })
+        .catch((e) => {
+          this.handleError(e, reject);
+        });
+    });
+  }
+
   public delete(url: string) {
     return new Promise((resolve, reject) => {
       axios
