@@ -1,11 +1,11 @@
 import type { App } from "vue";
-// import FooterViewComponent from "@/components/Footer.vue";
+import WinModalViewComponent from "@/components/WinModal.vue";
 
 
 
 export function registerComponents(app: App) {
-  // app
-  //   .component("footer-view", FooterViewComponent)
+  app
+    .component("winModal-view", WinModalViewComponent)
   //   .component("navBar-view", NavBarViewComponent)
   //   .component("devisFichier-view", EditerDevisModule)
   //   .component("ressource-view", Ressource)

@@ -1,5 +1,6 @@
 <template>
   <v-container fluid class="full-page-container">
+    <winModal-view></winModal-view>
     <v-row>
       <v-col cols="12" class="justify-center align-center d-flex">
         <v-flex xs12>
@@ -358,7 +359,6 @@ function addToadFive() {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-image: url("@/assets/logo.png");
   background-size: cover;
   background-position: center;
   overflow: hidden;

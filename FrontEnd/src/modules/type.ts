@@ -27,6 +27,7 @@ export interface IingredientRecepie
 export interface IGame {
     ingredients: IingredientRecepie;
     username: string;
-    isPotionFinished: false,
+    isPotionFinished: boolean,
     secretIngredient: "",
+    isAuth: boolean
 }

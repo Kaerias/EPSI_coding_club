@@ -67,19 +67,33 @@
         </v-card-actions>
       </v-card>
     </v-flex>
+    {{ store.getIsAuth }}
   </v-container>
 </template>
 
 <script lang="ts" setup>
 import { useGameStore } from "./store";
-import { Ref, ref } from "vue";
+import { Ref, ref, computed } from "vue";
+import { storeToRefs } from "pinia";
 import { IsignIn, IsignUp, IingredientRecepie, IGame } from "./type";
+import { watch } from "vue";
+import router from "../router";
 
 const store = useGameStore();
+const storeRefs = storeToRefs(store);
 let login: Ref<boolean> = ref(true);
 let user: Ref<string> = ref("");
 let password: Ref<string> = ref("");
 let show2: Ref<boolean> = ref(false);
+
+const isAuth = computed(() => store.getIsAuth);
+
+watch(isAuth, (newVal) => {
+  if (newVal) {
+    // Handle the case when isAuth becomes true
+    router.push("/game");
+  }
+});
 
 function signIn() {
   if (user.value.length > 0 && password.value.length > 0) {
@@ -124,7 +138,6 @@ function changeToRegister() {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-image: url("@/assets/logo.png");
   background-size: cover;
   background-position: center;
   overflow: hidden;
