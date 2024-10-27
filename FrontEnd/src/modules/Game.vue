@@ -49,7 +49,7 @@
                           class="ingredientBackground"
                         ></v-img>
                         <h3 class="text-center ingredientBackground">
-                          oeil araignée
+                          jambe araignée
                         </h3>
                         <v-row>
                           <v-col
@@ -215,9 +215,35 @@
                 </v-card>
               </v-flex>
               <v-spacer></v-spacer>
-              <v-flex xs4 class="d-flex align-end">
+              <v-flex xs4 class="d-flex flex-column align-end">
                 <v-card
-                  class="mx-auto d-flex align-end transparent-card elevation-0"
+                  class="mx-auto d-flex align-start elevation-0 transparent-card"
+                  width="30vw"
+                  height="50vh"
+                >
+                  <v-row>
+                    <v-col cols="12" style="background-color: white;">
+                      <h3>Vos ingrédients:</h3>
+                    </v-col>
+                    <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
+                      <p>jambe d'araignée<br>{{ store.ingredients.spiderLeg.toString() }}</p>
+                    </v-col>
+                    <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
+                      <p>aile de chauve souris<br>{{ store.ingredients.batWing.toString() }}</p>
+                    </v-col>
+                    <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
+                      <p>Citrouille<br>{{ store.ingredients.pumpkinJuice.toString() }}</p>
+                    </v-col>
+                    <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
+                      <p>Venim de serpent<br>{{ store.ingredients.snakeVenom.toString() }}</p>
+                    </v-col>
+                    <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
+                      <p>Bave de crapaud<br>{{ store.ingredients.toadSlime.toString() }}</p>
+                    </v-col>
+                  </v-row>
+                </v-card>
+                <v-card
+                  class="mx-auto d-flex align-end elevation-0 transparent-card "
                   width="30vw"
                   height="50vh"
                 >
@@ -286,11 +312,10 @@ const store = useGameStore();
 
 onMounted(() => {
   console.log("mounted");
-  if(store.username === "") {
+  if (store.username === "") {
     router.push("/");
   }
 });
-
 
 function addBatOne() {
   let ingredient: Iingredient = {

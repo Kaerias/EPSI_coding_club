@@ -41,11 +41,11 @@ export const useGameStore = defineStore('game', {
             client.signin(jsonSignIn).then((resp) => {
                 console.log(resp);
                 this.ingredients = {
-                    batWing: resp.data.batWing,
-                    pumpkinJuice: resp.data.pumpkinJuice,
-                    snakeVenom: resp.data.snakeVenom,
-                    spiderLeg: resp.data.spiderLeg,
-                    toadSlime: resp.data.toadSlime
+                    batWing: resp.data.ingredients.batWing,
+                    pumpkinJuice: resp.data.ingredients.pumpkinJuice,
+                    snakeVenom: resp.data.ingredients.snakeVenom,
+                    spiderLeg: resp.data.ingredients.spiderLeg,
+                    toadSlime: resp.data.ingredients.toadSlime
                 }
                 this.secretIngredient = resp.data.ingredients.secretIngredient;
                 this.isPotionFinished = resp.data.ingredients.isPotionFinished;
