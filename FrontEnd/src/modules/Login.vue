@@ -67,7 +67,6 @@
         </v-card-actions>
       </v-card>
     </v-flex>
-    {{ store.getIsAuth }}
   </v-container>
 </template>
 
@@ -94,6 +93,7 @@ watch(isAuth, (newVal) => {
     router.push("/game");
   }
 });
+
 
 function signIn() {
   if (user.value.length > 0 && password.value.length > 0) {

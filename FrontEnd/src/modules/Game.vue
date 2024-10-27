@@ -277,10 +277,20 @@
 import { useGameStore } from "./store";
 import { Ref, ref } from "vue";
 import { Iingredient } from "./type";
+import { onMounted } from "vue";
+import router from "../router";
 
 let nbrImages: Ref<number> = ref(0);
 
 const store = useGameStore();
+
+onMounted(() => {
+  console.log("mounted");
+  if(store.username === "") {
+    router.push("/");
+  }
+});
+
 
 function addBatOne() {
   let ingredient: Iingredient = {
