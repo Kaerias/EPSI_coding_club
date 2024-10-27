@@ -318,31 +318,30 @@
                       >Recette</v-card-title
                     >
                     <div class="text-start">
-                      <v-card-text
-                        class="d-flex align-center justify-center ml-5 mt-5"
-                      >
-                      <v-row>
-                        <v-col cols="12" class="">
-                          1 - Placez 3 pattes d'araignée dans le chaudron.
-
-                        </v-col>
-                        <v-col  cols="12">
-                          2 - Ajoutez 1 aile de chauve-souris et faites grésiller.
-                        </v-col>
-                        <v-col  cols="12">
-                          3 - Incorporez 4 citrouilles en morceaux.
-                        </v-col>
-                        <v-col  cols="12">
-                          4 - Versez 12 doses de venin de serpent et mélangez.
-                        </v-col>
-                        <v-col  cols="12">
-                          5 - Ajoutez 26 gouttes de bave de crapaud pour épaissir.
-                        </v-col>
-                        <v-col  cols="12">
-                          6 - Chuchotez l’incantation et ajoutez une pincée de <strong>l’ingrédient secret</strong>, pour libérer les pouvoirs.
-                        </v-col>
-                    </v-row>
-                      </v-card-text>
+                      <div :class="{'scroll-container': isSmallScreen}">
+                        <v-card-text class="d-flex align-center justify-center ml-5 mt-5">
+                          <v-row>
+                            <v-col cols="12">
+                              1 - Placez 3 pattes d'araignée dans le chaudron.
+                            </v-col>
+                            <v-col cols="12">
+                              2 - Ajoutez 1 aile de chauve-souris et faites grésiller.
+                            </v-col>
+                            <v-col cols="12">
+                              3 - Incorporez 4 citrouilles en morceaux.
+                            </v-col>
+                            <v-col cols="12">
+                              4 - Versez 12 doses de venin de serpent et mélangez.
+                            </v-col>
+                            <v-col cols="12">
+                              5 - Ajoutez 26 gouttes de bave de crapaud pour épaissir.
+                            </v-col>
+                            <v-col cols="12">
+                              6 - Chuchotez l’incantation et ajoutez une pincée de <strong>l’ingrédient secret</strong>, pour libérer les pouvoirs.
+                            </v-col>
+                          </v-row>
+                        </v-card-text>
+                      </div>
                     </div>
                   </v-card>
                 </v-card>
@@ -366,8 +365,18 @@ let nbrImages: Ref<number> = ref(0);
 
 const store = useGameStore();
 
+
+const isSmallScreen = ref(false)
+
 onMounted(() => {
   console.log("mounted");
+  if (window.innerWidth < 1400 || window.innerHeight < 700) {
+    console.log(window.innerHeight);
+    console.log(window.innerWidth);
+    
+    
+    isSmallScreen.value = true
+  }
   if (store.username === "") {
     router.push("/");
   }
@@ -525,5 +534,10 @@ function reset() {
   background-size: 25% 100%;
   background-repeat: no-repeat;
   height: "100vh";
+}
+
+.scroll-container {
+  max-height: 280px; /* Adjust the height as needed */
+  overflow-y: auto;
 }
 </style>
