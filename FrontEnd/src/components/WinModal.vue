@@ -1,5 +1,4 @@
 <template>
-  <p>{{store.isPotionFinished}}</p>
   <v-dialog v-model="store.isPotionFinished" max-width="480">
     <v-card title="">
       <template v-slot:text>
