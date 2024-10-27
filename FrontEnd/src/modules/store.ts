@@ -1,6 +1,6 @@
 import { createPinia, defineStore } from 'pinia';
 import * as client from "./service";
-import { Iingredient, Isignin, Isignup, IingredientRecepie, IGame } from './type';
+import { Iingredient, IsignIn, IsignUp, IingredientRecepie, IGame } from './type';
 
 // Create a new Pinia instance
 const pinia = createPinia();
@@ -26,13 +26,13 @@ export const useGameStore = defineStore('game', {
     getters: {
     },
     actions: {
-        signup(param: Isignin) {
+        signup(param: IsignUp) {
             const jsonSignUp = JSON.stringify(param);
             client.signup(jsonSignUp).then((resp) => {
                 console.log(resp);
             });
         },
-        signin(param: Isignup) {
+        signin(param: IsignIn) {
             const jsonSignIn = JSON.stringify(param);
             client.signin(jsonSignIn).then((resp) => {
                 console.log(resp);

@@ -1,10 +1,10 @@
-export interface Isignin
+export interface IsignIn
 {
     username: string;
     password: string;
 }
 
-export interface Isignup
+export interface IsignUp
 {
     username: string;
     password: string;

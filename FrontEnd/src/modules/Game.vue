@@ -284,70 +284,70 @@ const store = useGameStore();
 
 function addBatOne() {
   let ingredient: Iingredient = {
-    username: "Guillaume",
+    username: store.username,
   };
   store.batOne(ingredient);
 }
 
 function addBatFive() {
   let ingredient: Iingredient = {
-    username: "Guillaume",
+    username: store.username,
   };
   store.batFive(ingredient);
 }
 
 function addPumpkinOne() {
   let ingredient: Iingredient = {
-    username: "Guillaume",
+    username: store.username,
   };
   store.pumpkinOne(ingredient);
 }
 
 function addPumpkinFive() {
   let ingredient: Iingredient = {
-    username: "Guillaume",
+    username: store.username,
   };
   store.pumpkinFive(ingredient);
 }
 
 function addSnakeOne() {
   let ingredient: Iingredient = {
-    username: "Guillaume",
+    username: store.username,
   };
   store.snakeOne(ingredient);
 }
 
 function addSnakeFive() {
   let ingredient: Iingredient = {
-    username: "Guillaume",
+    username: store.username,
   };
   store.snakeFive(ingredient);
 }
 
 function addSpiderOne() {
   let ingredient: Iingredient = {
-    username: "Guillaume",
+    username: store.username,
   };
   store.spiderOne(ingredient);
 }
 
 function addSpiderFive() {
   let ingredient: Iingredient = {
-    username: "Guillaume",
+    username: store.username,
   };
   store.spiderFive(ingredient);
 }
 
 function addToadOne() {
   let ingredient: Iingredient = {
-    username: "Guillaume",
+    username: store.username,
   };
   store.toadOne(ingredient);
 }
 
 function addToadFive() {
   let ingredient: Iingredient = {
-    username: "Guillaume",
+    username: store.username,
   };
   store.toadFive(ingredient);
 }
