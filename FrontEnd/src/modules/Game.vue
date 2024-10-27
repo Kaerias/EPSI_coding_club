@@ -150,7 +150,7 @@
                           alt="Logo"
                           class="ingredientBackground"
                         ></v-img>
-                        <h3 class="text-center ingredientBackground">Venim</h3>
+                        <h3 class="text-center ingredientBackground">Venin  </h3>
                         <v-row>
                           <v-col
                             cols="6"
@@ -235,7 +235,7 @@
                       <p>Citrouille<br>{{ store.ingredients.pumpkinJuice.toString() }}</p>
                     </v-col>
                     <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
-                      <p>Venim de serpent<br>{{ store.ingredients.snakeVenom.toString() }}</p>
+                      <p>Venin   de serpent<br>{{ store.ingredients.snakeVenom.toString() }}</p>
                     </v-col>
                     <v-col class="d-flex align-center text-center justify-center" style="background-color: blanchedalmond">
                       <p>Bave de crapaud<br>{{ store.ingredients.toadSlime.toString() }}</p>
