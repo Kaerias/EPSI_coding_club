@@ -34,20 +34,20 @@ app.post('/signup', (req, res) => {
   try {
     db.collection(dbCollection).doc(req.body.username).get().then((doc) => {
       if (!(doc.data() === undefined)) {
-        res.status(403).json({message: "Ton nom d\'utilisateur est déjà pris !", responseType: "Forbidden", errorType: "AlreadyCreated"});
+        res.status(403).json({ message: "Ton nom d\'utilisateur est déjà pris !", responseType: "Forbidden", errorType: "AlreadyCreated" });
         return;
       }
       db.collection(dbCollection).doc(req.body.username).set({
-        batWing : 0,
-        isPotionFinished : false,
-        password : req.body.password,
-        pumpkinJuice : 0,
-        secretIngredient : "",
-        snakeVenom : 0,
-        spiderLeg : 0,
-        toadSlime : 0
+        batWing: 0,
+        isPotionFinished: false,
+        password: req.body.password,
+        pumpkinJuice: 0,
+        secretIngredient: "",
+        snakeVenom: 0,
+        spiderLeg: 0,
+        toadSlime: 0
       })
-      res.status(201).json({message: "Done.", responseType: "Created", errorType: null})
+      res.status(201).json({ message: "Done.", responseType: "Created", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -63,19 +63,21 @@ app.post('/signin', (req, res) => {
   try {
     db.collection(dbCollection).doc(req.body.username).get().then((doc) => {
       if (doc.data() === undefined) {
-        res.status(200).json({message: "Ce nom d\'utilisateur n\'existe pas !", responseType: "No content", errorType: "UserAlreadyExist"});
+        res.status(200).json({ message: "Ce nom d\'utilisateur n\'existe pas !", responseType: "No content", errorType: "UserAlreadyExist" });
         return;
       }
       if (req.body.password === doc.data().password)
-        res.status(200).json({batWing : doc.data(),
-                                         isPotionFinished : false,
-                                         pumpkinJuice : 0,
-                                         secretIngredient : "",
-                                         snakeVenom : 0,
-                                         spiderLeg : 0,
-                                         toadSlime : 0});
+        res.status(200).json({
+          batWing: doc.data(),
+          isPotionFinished: false,
+          pumpkinJuice: 0,
+          secretIngredient: "",
+          snakeVenom: 0,
+          spiderLeg: 0,
+          toadSlime: 0
+        });
       else
-        res.status(200).json({message: "Mot de passe invalide !", responseType: "No content", errorType: "WrongPassword"});
+        res.status(200).json({ message: "Mot de passe invalide !", responseType: "No content", errorType: "WrongPassword" });
     })
   } catch (error) {
     internalError();
@@ -88,21 +90,23 @@ app.patch('/reset', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        batWing : 0,
-        isPotionFinished : false,
-        pumpkinJuice : 0,
-        secretIngredient : "",
-        snakeVenom : 0,
-        spiderLeg : 0,
-        toadSlime : 0
+        batWing: 0,
+        isPotionFinished: false,
+        pumpkinJuice: 0,
+        secretIngredient: "",
+        snakeVenom: 0,
+        spiderLeg: 0,
+        toadSlime: 0
       })
-      res.status(200).json({batWing : 0,
-                                       isPotionFinished : false,
-                                       pumpkinJuice : 0,
-                                       secretIngredient : "",
-                                       snakeVenom : 0,
-                                       spiderLeg : 0,
-                                       toadSlime : 0});
+      res.status(200).json({
+        batWing: 0,
+        isPotionFinished: false,
+        pumpkinJuice: 0,
+        secretIngredient: "",
+        snakeVenom: 0,
+        spiderLeg: 0,
+        toadSlime: 0
+      });
     })
   } catch (error) {
     internalError();
@@ -115,9 +119,9 @@ app.patch('/spiderOne', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        spiderLeg : doc.data().spiderLeg + 1
+        spiderLeg: doc.data().spiderLeg + 1
       })
-      res.status(200).json({spiderLeg : doc.data().spiderLeg + 1, responseType: "Success", errorType: null})
+      res.status(200).json({ spiderLeg: doc.data().spiderLeg + 1, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -130,9 +134,9 @@ app.patch('/spiderFive', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        spiderLeg : doc.data().spiderLeg + 5
+        spiderLeg: doc.data().spiderLeg + 5
       })
-      res.status(200).json({spiderLeg : doc.data().spiderLeg + 5, responseType: "Success", errorType: null})
+      res.status(200).json({ spiderLeg: doc.data().spiderLeg + 5, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -145,9 +149,9 @@ app.patch('/spider', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        spiderLeg : doc.data().spiderLeg + req.body.number
+        spiderLeg: doc.data().spiderLeg + req.body.number
       })
-      res.status(200).json({spiderLeg : doc.data().spiderLeg + req.body.number, responseType: "Success", errorType: null})
+      res.status(200).json({ spiderLeg: doc.data().spiderLeg + req.body.number, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -161,9 +165,9 @@ app.patch('/batOne', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        batWing : doc.data().batWing + 1
+        batWing: doc.data().batWing + 1
       })
-      res.status(200).json({batWing : doc.data().batWing + 1, responseType: "Success", errorType: null})
+      res.status(200).json({ batWing: doc.data().batWing + 1, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -176,9 +180,9 @@ app.patch('/batFive', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        batWing : doc.data().batWing + 5
+        batWing: doc.data().batWing + 5
       })
-      res.status(200).json({batWing : doc.data().batWing + 5, responseType: "Success", errorType: null})
+      res.status(200).json({ batWing: doc.data().batWing + 5, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -191,9 +195,9 @@ app.patch('/bat', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        batWing : doc.data().batWing + req.body.number
+        batWing: doc.data().batWing + req.body.number
       })
-      res.status(200).json({batWing : doc.data().batWing + req.body.number, responseType: "Success", errorType: null})
+      res.status(200).json({ batWing: doc.data().batWing + req.body.number, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -208,9 +212,9 @@ app.patch('/pumpkinOne', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        pumpkinJuice : doc.data().pumpkinJuice + 1
+        pumpkinJuice: doc.data().pumpkinJuice + 1
       })
-      res.status(200).json({pumpkinJuice : doc.data().pumpkinJuice + 1, responseType: "Success", errorType: null})
+      res.status(200).json({ pumpkinJuice: doc.data().pumpkinJuice + 1, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -223,9 +227,9 @@ app.patch('/pumpkinFive', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        pumpkinJuice : doc.data().pumpkinJuice + 5
+        pumpkinJuice: doc.data().pumpkinJuice + 5
       })
-      res.status(200).json({pumpkinJuice : doc.data().pumpkinJuice + 5, responseType: "Success", errorType: null})
+      res.status(200).json({ pumpkinJuice: doc.data().pumpkinJuice + 5, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -238,9 +242,9 @@ app.patch('/pumpkin', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        pumpkinJuice : doc.data().pumpkinJuice + req.body.number
+        pumpkinJuice: doc.data().pumpkinJuice + req.body.number
       })
-      res.status(200).json({pumpkinJuice : doc.data().pumpkinJuice + req.body.number, responseType: "Success", errorType: null})
+      res.status(200).json({ pumpkinJuice: doc.data().pumpkinJuice + req.body.number, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -254,9 +258,9 @@ app.patch('/toadOne', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        toadSlime : doc.data().toadSlime + 1
+        toadSlime: doc.data().toadSlime + 1
       })
-      res.status(200).json({toadSlime : doc.data().toadSlime + 1, responseType: "Success", errorType: null})
+      res.status(200).json({ toadSlime: doc.data().toadSlime + 1, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -269,9 +273,9 @@ app.patch('/toadFive', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        toadSlime : doc.data().toadSlime + 5
+        toadSlime: doc.data().toadSlime + 5
       })
-      res.status(200).json({toadSlime : doc.data().toadSlime + 5, responseType: "Success", errorType: null})
+      res.status(200).json({ toadSlime: doc.data().toadSlime + 5, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -284,9 +288,9 @@ app.patch('/toad', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        toadSlime : doc.data().toadSlime + req.body.number
+        toadSlime: doc.data().toadSlime + req.body.number
       })
-      res.status(200).json({toadSlime : doc.data().toadSlime + req.body.number, responseType: "Success", errorType: null})
+      res.status(200).json({ toadSlime: doc.data().toadSlime + req.body.number, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -300,9 +304,9 @@ app.patch('/snakeOne', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        snakeVenom : doc.data().snakeVenom + 1
+        snakeVenom: doc.data().snakeVenom + 1
       })
-      res.status(200).json({snakeVenom : doc.data().snakeVenom + 1, responseType: "Success", errorType: null})
+      res.status(200).json({ snakeVenom: doc.data().snakeVenom + 1, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -315,9 +319,9 @@ app.patch('/snakeFive', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        snakeVenom : doc.data().snakeVenom + 5
+        snakeVenom: doc.data().snakeVenom + 5
       })
-      res.status(200).json({snakeVenom : doc.data().snakeVenom + 5, responseType: "Success", errorType: null})
+      res.status(200).json({ snakeVenom: doc.data().snakeVenom + 5, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -330,9 +334,9 @@ app.patch('/snake', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        snakeVenom : doc.data().snakeVenom + req.body.number
+        snakeVenom: doc.data().snakeVenom + req.body.number
       })
-      res.status(200).json({snakeVenom : doc.data().snakeVenom + req.body.number, responseType: "Success", errorType: null})
+      res.status(200).json({ snakeVenom: doc.data().snakeVenom + req.body.number, responseType: "Success", errorType: null })
     })
   } catch (error) {
     internalError();
@@ -345,11 +349,11 @@ app.patch('/secretIngredient', (req, res) => {
       if (!checkConnexion(doc.data(), res))
         return;
       db.collection(dbCollection).doc(req.body.username).update({
-        secretIngredient : req.body.secret
+        secretIngredient: req.body.secret
       })
       if (isPotionFinished(doc.data(), req.body.secret, res)) {
         db.collection(dbCollection).doc(req.body.username).update({
-          isPotionFinished : true
+          isPotionFinished: true
         })
       }
     })
@@ -363,28 +367,28 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 });
 
-function checkConnexion (user, res) {
+function checkConnexion(user, res) {
   if (user === undefined) {
-    res.status(401).json({message: "Tu n\'est pas connecté !", responseType: "Unauthorized", errorType: "NotConnected"});
+    res.status(401).json({ message: "Tu n\'est pas connecté !", responseType: "Unauthorized", errorType: "NotConnected" });
     return false;
   }
   return true;
 }
 
-function internalError (res) {
-  res.status(500).json({error: error.message, responseType: "Internal Error", errorType: "InternalError"});
+function internalError(res) {
+  res.status(500).json({ error: error.message, responseType: "Internal Error", errorType: "InternalError" });
 }
 
-function isPotionFinished (data, secretIngredient, res) {
+function isPotionFinished(data, secretIngredient, res) {
   if (data.batWing === secret.batWing &&
-      data.pumpkinJuice === secret.pumpkinJuice &&
-      data.snakeVenom === secret.snakeVenom &&
-      data.spiderLeg === secret.spiderLeg &&
-      data.toadSlime === secret.toadSlime &&
-      secretIngredient === secret.secretIngredient) {
-      res.status(200).json({secret : secretIngredient, isPotionFinished: true, responseType: "Success", errorType: null})
+    data.pumpkinJuice === secret.pumpkinJuice &&
+    data.snakeVenom === secret.snakeVenom &&
+    data.spiderLeg === secret.spiderLeg &&
+    data.toadSlime === secret.toadSlime &&
+    secretIngredient === secret.secretIngredient) {
+    res.status(200).json({ secret: secretIngredient, isPotionFinished: true, responseType: "Success", errorType: null })
     return true
   }
-  res.status(200).json({secret : secretIngredient, isPotionFinished: false, responseType: "Success", errorType: null})
+  res.status(200).json({ secret: secretIngredient, isPotionFinished: false, responseType: "Success", errorType: null })
   return false
 }

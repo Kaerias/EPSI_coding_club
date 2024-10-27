@@ -1,5 +1,6 @@
 import { createPinia, defineStore } from 'pinia';
 import * as client from "./service";
+import { Iingredient, Isignin, Isignup } from './type';
 
 // Create a new Pinia instance
 const pinia = createPinia();

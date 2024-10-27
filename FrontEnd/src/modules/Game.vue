@@ -41,7 +41,119 @@
                     height="100vh"
                   >
                     <v-row class="pt-2 pl-2 pr-3">
-                      <v-col cols="6" v-for="nbrImages in 5">
+                      <v-col cols="6">
+                        <v-img
+                          src="@/assets/cauldron 2.png"
+                          alt="Logo"
+                          class="ingredientBackground"
+                        ></v-img>
+                        <h3 class="text-center ingredientBackground">
+                          bave de crapaud
+                        </h3>
+                        <v-row>
+                          <v-col
+                            cols="6"
+                            class="text-center d-flex align-center justify-center"
+                          >
+                            <v-btn size="small" class="btnIngredientBackground"
+                              ><h2 class="pt-1">+1</h2></v-btn
+                            >
+                          </v-col>
+                          <v-col
+                            cols="6"
+                            class="text-center d-flex align-center justify-center"
+                          >
+                            <v-btn size="small" class="btnIngredientBackground"
+                              ><h2 class="pt-1">+5</h2></v-btn
+                            >
+                          </v-col>
+                        </v-row>
+                      </v-col>
+                      <v-col cols="6">
+                        <v-img
+                          src="@/assets/cauldron 2.png"
+                          alt="Logo"
+                          class="ingredientBackground"
+                        ></v-img>
+                        <h3 class="text-center ingredientBackground">
+                          bave de crapaud
+                        </h3>
+                        <v-row>
+                          <v-col
+                            cols="6"
+                            class="text-center d-flex align-center justify-center"
+                          >
+                            <v-btn size="small" class="btnIngredientBackground"
+                              ><h2 class="pt-1">+1</h2></v-btn
+                            >
+                          </v-col>
+                          <v-col
+                            cols="6"
+                            class="text-center d-flex align-center justify-center"
+                          >
+                            <v-btn size="small" class="btnIngredientBackground"
+                              ><h2 class="pt-1">+5</h2></v-btn
+                            >
+                          </v-col>
+                        </v-row>
+                      </v-col>
+                      <v-col cols="6">
+                        <v-img
+                          src="@/assets/cauldron 2.png"
+                          alt="Logo"
+                          class="ingredientBackground"
+                        ></v-img>
+                        <h3 class="text-center ingredientBackground">
+                          bave de crapaud
+                        </h3>
+                        <v-row>
+                          <v-col
+                            cols="6"
+                            class="text-center d-flex align-center justify-center"
+                          >
+                            <v-btn size="small" class="btnIngredientBackground"
+                              ><h2 class="pt-1">+1</h2></v-btn
+                            >
+                          </v-col>
+                          <v-col
+                            cols="6"
+                            class="text-center d-flex align-center justify-center"
+                          >
+                            <v-btn size="small" class="btnIngredientBackground"
+                              ><h2 class="pt-1">+5</h2></v-btn
+                            >
+                          </v-col>
+                        </v-row>
+                      </v-col>
+                      <v-col cols="6">
+                        <v-img
+                          src="@/assets/cauldron 2.png"
+                          alt="Logo"
+                          class="ingredientBackground"
+                        ></v-img>
+                        <h3 class="text-center ingredientBackground">
+                          bave de crapaud
+                        </h3>
+                        <v-row>
+                          <v-col
+                            cols="6"
+                            class="text-center d-flex align-center justify-center"
+                          >
+                            <v-btn size="small" class="btnIngredientBackground"
+                              ><h2 class="pt-1">+1</h2></v-btn
+                            >
+                          </v-col>
+                          <v-col
+                            cols="6"
+                            class="text-center d-flex align-center justify-center"
+                          >
+                            <v-btn size="small" class="btnIngredientBackground"
+                              ><h2 class="pt-1">+5</h2></v-btn
+                            >
+                          </v-col>
+                        </v-row>
+                      </v-col>
+                      <v-col cols="6">
                         <v-img
                           src="@/assets/cauldron 2.png"
                           alt="Logo"
@@ -136,10 +248,18 @@
 import router from "@/router";
 import { useGameStore } from "./store";
 import { Ref, ref } from "vue";
+import { Iingredient } from "./type";
 
 let nbrImages: Ref<number> = ref(0);
 
 const store = useGameStore();
+
+function addBatOn() {
+  let ingredient: Iingredient = {
+    username: "guillaume",
+  };
+  store.batOne(ingredient);
+}
 </script>
 
 <style lang="css" scoped>

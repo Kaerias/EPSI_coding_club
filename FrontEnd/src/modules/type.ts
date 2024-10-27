@@ -1,16 +1,16 @@
-interface Isignin
+export interface Isignin
 {
     username: string;
     password: string;
 }
 
-interface Isignup
+export interface Isignup
 {
     username: string;
     password: string;
 }
 
-interface Iingredient
+export interface Iingredient
 {
     username: string;
 }
