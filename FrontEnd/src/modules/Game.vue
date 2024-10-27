@@ -282,7 +282,7 @@ let nbrImages: Ref<number> = ref(0);
 
 const store = useGameStore();
 
-function addBatOn() {
+function addBatOne() {
   let ingredient: Iingredient = {
     username: "Guillaume",
   };
@@ -321,7 +321,7 @@ function addSnakeFive() {
   let ingredient: Iingredient = {
     username: "Guillaume",
   };
-  store.snakeOne(ingredient);
+  store.snakeFive(ingredient);
 }
 
 function addSpiderOne() {
