@@ -20,7 +20,6 @@
             prepend-icon="mdi-home"
             :type="show2 ? 'text' : 'password'"
             class="input-group--focused"
-            hint="At least 8 characters"
             label="Visible"
             name="input-10-2"
             @click:append="show2 = !show2"
@@ -28,11 +27,11 @@
           ></v-text-field>
         </v-card-text>
         <v-card-actions>
+          <v-btn color="green" @click="signIn()">Connexion</v-btn>
+          <v-spacer></v-spacer>
           <v-btn color="primary" @click="changeToRegister()"
             >S'enregistrer ?</v-btn
           >
-          <v-spacer></v-spacer>
-          <v-btn color="primary" @click="signIn()">Connexion</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -53,7 +52,6 @@
             prepend-icon="mdi-home"
             :type="show2 ? 'text' : 'password'"
             class="input-group--focused"
-            hint="At least 8 characters"
             label="Visible"
             name="input-10-2"
             @click:append="show2 = !show2"
@@ -61,11 +59,11 @@
           ></v-text-field>
         </v-card-text>
         <v-card-actions>
+          <v-btn color="green" @click="register()">Valider l'inscription</v-btn>
+          <v-spacer></v-spacer>
           <v-btn color="primary" @click="changeToLogin()"
             >Se connecter ?
           </v-btn>
-          <v-spacer></v-spacer>
-          <v-btn color="green" @click="register()">Valider l'inscription</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -73,7 +71,6 @@
 </template>
 
 <script lang="ts" setup>
-import router from "@/router";
 import { useGameStore } from "./store";
 import { Ref, ref } from "vue";
 import { IsignIn, IsignUp, IingredientRecepie, IGame } from "./type";
@@ -101,7 +98,6 @@ function register() {
     const userRegister: IsignUp = {
       username: user.value,
       password: password.value,
-      ù,
     };
     store.signup(userRegister);
     login.value = true;

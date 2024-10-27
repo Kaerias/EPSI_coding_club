@@ -273,7 +273,6 @@
 </template>
 
 <script lang="ts" setup>
-import router from "@/router";
 import { useGameStore } from "./store";
 import { Ref, ref } from "vue";
 import { Iingredient } from "./type";

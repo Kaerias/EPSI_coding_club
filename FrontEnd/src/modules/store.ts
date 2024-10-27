@@ -1,6 +1,8 @@
 import { createPinia, defineStore } from 'pinia';
 import * as client from "./service";
 import { Iingredient, IsignIn, IsignUp, IingredientRecepie, IGame } from './type';
+import { useRouter } from 'vue-router';
+const router = useRouter();
 
 // Create a new Pinia instance
 const pinia = createPinia();
@@ -45,6 +47,8 @@ export const useGameStore = defineStore('game', {
                 }
                 state.secretIngredient = resp.data.secretIngredient;
                 state.isPotionFinished = resp.data.isPotionFinished;
+                state.username = param.username;
+                router.push("/game");
             });
         },
         batOne(param: Iingredient) {

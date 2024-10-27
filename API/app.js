@@ -65,7 +65,7 @@ app.post('/signin', (req, res) => {
   try {
     db.collection(dbCollection).doc(req.body.username).get().then((doc) => {
       if (doc.data() === undefined) {
-        res.status(200).json({ message: "Ce nom d\'utilisateur n\'existe pas !", responseType: "No content", errorType: "UserAlreadyExist" });
+        res.status(401).json({ message: "Ce nom d\'utilisateur n\'existe pas !", responseType: "No content", errorType: "UserAlreadyExist" });
         return;
       }
       if (req.body.password === doc.data().password)
