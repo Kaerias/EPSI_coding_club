@@ -1,6 +1,6 @@
 import axios, { AxiosResponse, AxiosRequestConfig } from "axios";
 
-const hostUrl = import.meta.env.VITE_URLSERVER;
+const hostUrl = "http://localhost:3000";
 
 class FetchV2Service {
   get requestConfig() {
